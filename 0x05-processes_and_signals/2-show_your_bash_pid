@@ -2,5 +2,6 @@
 # displays lines containing the bash word
 # shellcheck disable=SC2009
 # ps aux --forest | grep bash
+# shellcheck disable=SC2211
 
 ./1* | grep bash
