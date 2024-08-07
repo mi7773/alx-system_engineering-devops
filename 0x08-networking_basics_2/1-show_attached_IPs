@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays all active ipv4 onthe machine it's executed on
+
+ifconfig | grep -o "inet \w*\.\w*\.\w*\.\w*" | cut -d' ' -f2
