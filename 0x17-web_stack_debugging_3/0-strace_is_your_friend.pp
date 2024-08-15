@@ -3,6 +3,5 @@
 exec { 'install_apache2':
   command  => 'apt install apache2',
   unless   => 'dpkg -l | grep apache2',
-  path     => '/bin',
   provider => shell,
 }
