@@ -2,5 +2,5 @@
 
 exec { 'php':
   command => 'sed -i s/phpo/php/g /var/www/html/wp-settings.php',
-  path    => '/bin',
+  path    => '/bin/',
 }
