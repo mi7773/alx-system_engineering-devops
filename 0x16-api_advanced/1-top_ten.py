@@ -21,10 +21,9 @@ def top_ten(subreddit):
                             allow_redirects=False)
     if response.status_code == 200:
         data = response.json()
-        # d = json.dumps(data, indent=4)
-        for i in range(10):
-            d = data.get('data', {}).get('children')[i].\
-                         get('data', {}).get('title', '')
-            print(d)
+        posts = data.get('data', {}).get('children', [])
+        for i, post in enumerate(posts[:10]):
+            if post.get('kind', '') == 't3':
+                print(post.get('data', {}).get('title', ''))
     else:
         print('None')
