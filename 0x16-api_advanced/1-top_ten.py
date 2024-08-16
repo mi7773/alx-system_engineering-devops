@@ -22,7 +22,8 @@ def top_ten(subreddit):
         data = response.json()
         # d = json.dumps(data, indent=4)
         for i in range(10):
-            d = data.get('data', {}).get('children')[i].get('data', {}).get('title', '')
+            d = data.get('data', {}).get('children')[i].\
+                         get('data', {}).get('title', '')
             print(d)
     else:
         print('None')
